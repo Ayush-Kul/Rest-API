@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Books</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Set a light background color */
+        }
+
+        .container {
+            max-width: 800px; /* Adjust the container width as needed */
+            margin-top: 50px;
+            background-color: #ffffff; /* Set a white background color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+        }
+
+        h1 {
+            color: #007bff; /* Set a primary color for the heading */
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .modal-content {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <hr>
+        <h1>List of Books</h1>
+        <hr>
+        <div>
+            <div class="row" id="books">
+                <!-- Book items will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="editBookModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Book</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="editForm" method="POST">
+                        <div class="form-group">
+                            <label for="ISBN">ISBN</label>
+                            <input class="form-control" name="isbn" id="isbn" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Title">Title</label>
+                            <input type="text" class="form-control" name="title" id="title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Author">Author</label>
+                            <input type="text" class="form-control" name="author" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="PublishedDate">Published Date</label>
+                            <input type="text" class="form-control" name="publishedDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Publisher">Publisher</label>
+                            <input type="text" class="form-control" name="publisher">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numOfPages">Number Of Pages</label>
+                            <input type="number" class="form-control" name="numOfPages" required>
+                        </div>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to Bootstrap JS and Popper.js (required for Bootstrap JavaScript components) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Include your JS file at the end of the body for better performance -->
+    <script src="book-list.js"></script>
+</body>
+</html>
